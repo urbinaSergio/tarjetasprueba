@@ -1,0 +1,201 @@
+{
+  "info": {
+    "_postman_id": "7865ad7d-96a1-4fe2-820e-f353becd0cd7",
+    "name": "tarjetas-service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "10043564"
+  },
+  "item": [
+    {
+      "name": "Crear Tarjeta",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"pan\": \"1234567890123456\",\r\n  \"titular\": \"Juan Perez\",\r\n  \"cedula\": \"1234567890\",\r\n  \"tipo\": \"CREDITO\",\r\n  \"telefono\": \"3001234567\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8083/api/creartarjeta",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "api",
+            "creartarjeta"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Enrolar Tarjeta",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"identificador\": \"0uvYg+7wzqY2Dy2twVtULdu74TkX+f9NRijCydOY/mPsY=\",\r\n  \"numeroValidacion\": 87\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8083/api/enrolar",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "api",
+            "enrolar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consultar Tarjeta",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8083/api/tarjetas?identificador=0uvYg+7wzqY2Dy2twVtULduTkX+f9NRijCydOY/mPsY=",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "api",
+            "tarjetas"
+          ],
+          "query": [
+            {
+              "key": "identificador",
+              "value": "0uvYg+7wzqY2Dy2twVtULduTkX+f9NRijCydOY/mPsY="
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar Tarjeta",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"identificador\": \"LXepv7LgvG43XeKIv-zhKMARayMQMgk-5MpGYCykzLA\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8083/api/tarjetas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "api",
+            "tarjetas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear Transaccion",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Anular Transaccion",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"identificador\": \"LEHfMo5ezprkIcQoVxl2YQZ2cVUhMkJQVp989m1wd-Q\",\r\n  \"numeroReferencia\": \"143856\",\r\n  \"totalCompra\": 250000.00\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8083/api/transacciones/anular",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "api",
+            "transacciones",
+            "anular"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar tarjetas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8083/api/listartarjetas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "api",
+            "listartarjetas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Transacciones",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8083/api/listartransacciones",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "api",
+            "listartransacciones"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

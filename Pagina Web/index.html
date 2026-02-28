@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/Estilos.css">
+    <title>Sistema de Tarjetas</title>
+</head>
+<body>
+    
+    <h1>Sistema de Tarjetas</h1>
+
+<!-- ================= CREAR TARJETA ================= -->
+
+<h2>Crear Tarjeta</h2>
+
+<form id="formTarjeta">
+    <input type="text" id="pan" placeholder="PAN (16-19 dígitos)" required>
+    <input type="text" id="titular" placeholder="Titular" required>
+    <input type="text" id="cedula" placeholder="Cédula (10-15 caracteres)" required>
+    <input type="text" id="telefono" placeholder="Teléfono (10 dígitos)" required>
+
+    <select id="tipo" required>
+        <option value="">Seleccione Tipo</option>
+        <option value="CREDITO">Crédito</option>
+        <option value="DEBITO">Débito</option>
+    </select>
+
+    <button type="submit">Crear Tarjeta</button>
+</form>
+
+<!-- ================= CREAR TRANSACCIÓN ================= -->
+
+<h2>Generar Pago</h2>
+
+<form id="formTransaccion">
+    <input type="text" id="identificador" placeholder="Identificador" required>
+    <input type="text" id="referencia" placeholder="Referencia (6 dígitos)" required>
+    <input type="number" id="totalCompra" placeholder="Total Compra" required>
+    <input type="text" id="direccionCompra" placeholder="Dirección Compra" required>
+
+    <button type="submit">Generar Pago</button>
+</form>
+
+<!-- ================= LISTA TARJETAS ================= -->
+
+<h2>Tarjetas</h2>
+<button onclick="cargarTarjetas()">Actualizar Tarjetas</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>PAN</th>
+            <th>Titular</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody id="tablaTarjetas"></tbody>
+</table>
+
+<!-- ================= LISTA TRANSACCIONES ================= -->
+
+<h2>Transacciones</h2>
+<button onclick="cargarTransacciones()">Actualizar Transacciones</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>Referencia</th>
+            <th>Total</th>
+            <th>Dirección</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody id="tablaTransacciones"></tbody>
+</table>
+
+    
+<script src="./js/JavaScritp.js"></script>
+</body>
+</html>
